@@ -16,6 +16,8 @@
   <!-- Page plugins -->
   <!-- CSS -->
   <link rel="stylesheet" href="{{ asset('admin/css/1.css') }}" type="text/css">
+  <script defer src="{{ mix('js/app.js') }}"></script>
+    @laravelPWA
 </head>
 
 <body class="bg-default">
@@ -29,7 +31,7 @@
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
               <h1 class="text-white">Bienvenido!</h1>
-              <p class="text-lead text-white">Gracias por permitirme dejar realizar esta prueba de superacion.</p>
+              <p class="text-lead text-white">Panel Administrativo de la Nasa.</p>
             </div>
           </div>
         </div>
@@ -89,7 +91,7 @@
       <div class="row align-items-center justify-content-xl-between">
         <div class="col-xl-6">
           <div class="copyright text-center text-xl-left text-muted">
-            &copy; 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">Arturo Ruiz</a>
+            &copy; 2021 <a href="#" class="font-weight-bold ml-1" target="_blank">Moises Alejandro & Arturo Ruiz </a>
           </div>
         </div>
         <div class="col-xl-6">
