@@ -171,7 +171,7 @@
                       <div class="row">
                         <div class="col">
                           <h5 class="card-title text-uppercase text-muted mb-0">Combos Registrados</h5>
-                          <span class="h2 font-weight-bold mb-0"></span>
+                          <span class="h2 font-weight-bold mb-0">{{ $combos_number }}</span>
                         </div>
                         <div class="col-auto">
                           <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
@@ -189,7 +189,7 @@
                         <div class="row">
                           <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Productos Registrados</h5>
-                            <span class="h2 font-weight-bold mb-0"></span>
+                            <span class="h2 font-weight-bold mb-0">{{ $products_number }}</span>
                           </div>
                           <div class="col-auto">
                             <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
@@ -207,7 +207,7 @@
                         <div class="row">
                           <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Categorias Registradas</h5>
-                            <span class="h2 font-weight-bold mb-0"></span>
+                            <span class="h2 font-weight-bold mb-0">{{ $categories_number }}</span>
                           </div>
                           <div class="col-auto">
                             <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
