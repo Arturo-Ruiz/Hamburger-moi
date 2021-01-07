@@ -24,6 +24,7 @@ Route::get('/Iniciar-Sesion', 'Admin\LoginController@index')->name('login-admin'
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/Panel-Administrativo', 'Admin\AdminPanelController@index')->name('admin-panel');
+    Route::resource('categories', 'Admin\CategoriesController');
 });
 
 

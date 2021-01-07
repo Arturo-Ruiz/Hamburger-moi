@@ -41,13 +41,13 @@
                     <span class="nav-link-text">Panel de Control</span>
                   </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link" href="{{route('Categories.index')}}">
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{route('categories.index')}}">
                       <i class="ni ni-bullet-list-67 "></i>
                       <span class="nav-link-text">Categorías</span>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                     <a class="nav-link" href="{{route('Products.index')}}">
                       <i class="fab fa-wpforms"></i>
                       <span class="nav-link-text">Productos</span>
@@ -58,7 +58,7 @@
                         <i class="fas fa-boxes"></i>
                         <span class="nav-link-text">Pedidos</span>
                     </a>
-                </li> --}}
+                </li>  --}}
                 @endif
 
 
@@ -162,7 +162,24 @@
               </div>
               <!-- Card stats -->
               <div class="row">
-
+                <div class="col-xl-4 col-md-6">
+                    <div class="card card-stats">
+                      <!-- Card body -->
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">Categorias Registradas</h5>
+                            <span class="h2 font-weight-bold mb-0">{{ $categories_number }}</span>
+                          </div>
+                          <div class="col-auto">
+                            <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
+                              <i class="ni ni-chart-pie-35"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                 <div class="col-xl-4 col-md-6">
                   <div class="card card-stats">
@@ -200,24 +217,7 @@
                       </div>
                     </div>
                   </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="card card-stats">
-                      <!-- Card body -->
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <h5 class="card-title text-uppercase text-muted mb-0">Categorias Registradas</h5>
-                            <span class="h2 font-weight-bold mb-0">{{ $categories_number }}</span>
-                          </div>
-                          <div class="col-auto">
-                            <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
-                              <i class="ni ni-chart-pie-35"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
                 <div class="col-xl-2 col-md-6">
 
                 </div>
