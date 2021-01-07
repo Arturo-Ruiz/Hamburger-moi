@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     {
         App\User::create([
             'name' => 'Arturo Ruiz',
-            'rol' => '1',
+            'role' => '1',
             'email' => 'gregory09ruiz@gmail.com',
             'password' => bcrypt('123'),
         ]);
