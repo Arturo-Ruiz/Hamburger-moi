@@ -24,6 +24,7 @@
 
   <!-- Main content -->
   <div class="main-content">
+
     <!-- Header -->
     <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
       <div class="container">
@@ -32,6 +33,20 @@
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
               <h1 class="text-white">Bienvenido!</h1>
               <p class="text-lead text-white">Panel Administrativo de la Nasa.</p>
+              @if (session('danger'))
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-12 ">
+                          <div class="alert alert-danger">
+                              {{ session('danger') }}
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          @endif
             </div>
           </div>
         </div>
@@ -44,7 +59,9 @@
     </div>
     <!-- Page content -->
     <div class="container mt--8 pb-5">
+
       <div class="row justify-content-center">
+
         <div class="col-lg-5 col-md-7">
           <div class="card bg-secondary border-0 mb-0">
             <div class="card-header bg-transparent pb-5">
@@ -101,7 +118,16 @@
     </div>
   </footer>
 
-
+  <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('admin/vendor/bootstrap_js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('admin/vendor/js-cookie/js.cookie.js') }}"></script>
+  <script src="{{ asset('admin/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
+  <script src="{{ asset('admin/vendor/jquery-scroll-lock/jquery-scrollLock.min.js') }}"></script>
+  <!-- Optional JS -->
+  <script src="{{ asset('admin/vendor/chart.js/Chart.min.js') }}"></script>
+  <script src="{{ asset('admin/vendor/chart.js/Chart.extension.js') }}"></script>
+  <!-- Arturo JS -->
+  <script src="{{ asset('admin/js/1.js') }}"></script>
 </body>
 
 </html>
