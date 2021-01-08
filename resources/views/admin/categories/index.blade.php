@@ -30,7 +30,6 @@
   <script src="{{ asset('admin/js/1.js') }}" ></script>
   <script src="{{ asset('admin/vendor/datatables/jquery.dataTables.min.js') }}" ></script>
   <script src="{{ asset('admin/vendor/datatables/dataTables.bootstrap4.min.js') }}" ></script>
-  <script defer src="{{ mix('js/app.js') }}"></script>
   <link rel="stylesheet" href="{{ asset('admin/css/1.css') }}" type="text/css">
   <style>
     .info-validation{

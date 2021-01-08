@@ -1,5 +1,6 @@
 <input type="button" class="btn btn-danger delete" name="delete"  id="{{$id}}" value="Eliminar">
 
+<input type="button" class="btn btn-secondary change-status" name="change-status"  id="{{$id}}" value="Cambiar Status">
 <script>
     $(".delete").unbind().click(function() {
         $id = $(this).attr('id');

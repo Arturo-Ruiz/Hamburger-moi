@@ -7,7 +7,8 @@
   <meta name="description" content="Panel Administrativo">
   <meta name="author" content="Arturo Ruiz">
   <title>Iniciar Sesion - Panel Administrativo</title>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" integrity="sha512-G3jAqT2eM4MMkLMyQR5YBhvN5/Da3IG6kqgYqU9zlIH4+2a+GuMdLb5Kpxy6ItMdCfgaKlo2XFhI0dHtMJjoRw==" crossorigin="anonymous"></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
   <!-- Fonts -->
   <link rel="stylesheet" href="{{ asset('admin/fonts/1.css') }}">
   <!-- Icons -->
@@ -16,7 +17,6 @@
   <!-- Page plugins -->
   <!-- CSS -->
   <link rel="stylesheet" href="{{ asset('admin/css/1.css') }}" type="text/css">
-  <script defer src="{{ mix('js/app.js') }}"></script>
     @laravelPWA
 </head>
 
