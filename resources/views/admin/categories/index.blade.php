@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="{{ asset('admin/vendor/font-awesome/all.min.css') }}" type="text/css">
   <!-- Page plugins -->
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ asset('admin/css/1.css') }}" type="text/css">
 
   <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}" ></script>
   <script src="{{ asset('admin/vendor/bootstrap_js/bootstrap.bundle.min.js') }}"></script>
@@ -32,7 +31,18 @@
   <script src="{{ asset('admin/vendor/datatables/jquery.dataTables.min.js') }}" ></script>
   <script src="{{ asset('admin/vendor/datatables/dataTables.bootstrap4.min.js') }}" ></script>
   <script defer src="{{ mix('js/app.js') }}"></script>
-
+  <link rel="stylesheet" href="{{ asset('admin/css/1.css') }}" type="text/css">
+  <style>
+    .info-validation{
+      text-align: center;
+      display: none;
+    }
+    .info-validation-show{
+      text-align: center;
+      display: block !important;
+      font-size: 15px;
+    }
+</style>
 
   @laravelPWA
 </head>
@@ -210,7 +220,7 @@
                           </nav>
                         </div>
                         <div class="col-lg-6 col-5 text-right">
-                          <a href="#"  data-toggle="modal" data-target="#registrar_categoria" class="prueba_boton_registrar btn btn-lg btn-neutral"> Registrar</a>
+                          <a href="#"  data-toggle="modal" data-target="#register_category" class="prueba_boton_registrar btn btn-lg btn-neutral"> Registrar</a>
                         </div>
                       </div>
                     </div>
@@ -235,40 +245,6 @@
                                 <th scope="col" class="sort" data-sort="status">Acciones</th>
                               </tr>
                             </thead>
-                            <tbody class="list">
-                                @foreach ($categories as $category )
-
-                              <tr>
-                                <th scope="row">
-                                  <div class="media align-items-center">
-                                    <div class="media-body">
-                                      <span class="name mb-0 text-sm">{{$category->id}}</span>
-                                    </div>
-                                  </div>
-                                </th>
-                                <td class="budget">
-                                    {{$category->name}}
-                                </td>
-
-
-                                <td>
-                                    <span class="badge badge-dot mr-4">
-                                      <span class="status">
-                                          <form method="POST" action="{{route('categories.destroy', $category->id)}}">
-                                            @csrf
-                                            @method('DELETE')
-                                              <button class="btn btn-danger">Eliminar</button>
-                                          </form>
-                                      </span>
-                                    </span>
-                                  </td>
-                              </tr>
-                              @endforeach
-
-
-
-
-                            </tbody>
                           </table>
                         </div>
                         <!-- Card footer -->
@@ -316,7 +292,7 @@
 
 
 
-          <div class="modal fade" id="registrar_categoria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="register_category" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -325,7 +301,6 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <form action="{{route('categories.store')}}" method="POST">
 
                 <div class="modal-body">
                         @csrf
@@ -334,14 +309,16 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text"><i class="fas fa-tag"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Ingresar Nombre" name="name"  required type="text">
+                            <input class="form-control name" placeholder="Ingresar Nombre" id="name" name="name"  required type="text">
                           </div>
+                        </div>
+                        <div>
+                            <p class="info-validation" id="text_validation">Debes de completar el formulario para continuar*</p>
                         </div>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                  <button  type="submit" class="btn test-buuton btn-primary">Registrar Categoria</button>
-                </form>
+                  <button  type="submit" class="btn test-buuton btn-primary save">Registrar Categoria</button>
 
                 </div>
               </div>
@@ -350,7 +327,7 @@
 
 
     <script>
-        var dataTable = $('#categories').DataTable({
+        $dataTable = $('#categories').DataTable({
             "language": {
               "sProcessing":     "Procesando...",
               "sLengthMenu":     "Mostrar _MENU_ registros",
@@ -375,16 +352,53 @@
                   "sSortDescending": ": Activar para ordenar la columna de manera descendente"
               }
 
-  }
+        },
+        "serverSide": true,
+        "ajax": "{{url('api/categories')}}",
+        "columns": [
+            {data: 'id'},
+            {data: 'name'},
+            {data: 'btn'},
+        ]
       });
 
 
 
         document.addEventListener("turbolinks:before-cache", function() {
-            if (dataTable !== null) {
-            dataTable.destroy();
-            dataTable = null;
+            if ($dataTable !== null) {
+            $dataTable.destroy();
+            $dataTable = null;
             }
+        });
+
+
+        $(".save").unbind().click(function() {
+
+        var name = $(".name").val();
+        if(name){
+            $.ajax({
+                url: "{{url('api/categories/create')}}",
+                type: "POST",
+                data:{
+                name: name,
+                _token:'{{ csrf_token() }}'
+                },
+                cache: false,
+                dataType: 'json',
+                success: function(dataResult){
+
+                }
+            });
+
+        $('#register_category').modal('toggle');
+        $dataTable.ajax.reload(null, false );
+
+        }else{
+            document.getElementById('text_validation').className = 'info-validation-show';
+        }
+
+
+
         });
     </script>
 

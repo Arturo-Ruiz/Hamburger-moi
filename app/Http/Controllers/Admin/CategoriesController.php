@@ -15,8 +15,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('admin.categories.index', compact('categories'));
+        return view('admin.categories.index');
     }
 
 
@@ -27,16 +26,15 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+
     public function store(Request $request)
     {
         $category = new Category;
         $category->name  =  $request->name;
         $category->save();
-
-        return back()->with('info', 'Guardado Correctamente');
     }
-
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -66,9 +64,8 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $category = Category::find($id)->delete();
-        return back()->with('danger', 'Eliminado Correctamente');
+        $category = Category::find($request->id)->delete();
     }
 }

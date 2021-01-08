@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
-
+use App\Category;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,5 +20,14 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('categories', function () {
-    //
+    return datatables()
+    ->eloquent(Category::query())
+    ->addColumn('btn', 'admin.categories.actions')
+    ->rawColumns(['btn'])
+    ->toJson();
 });
+
+Route::any('categories/delete', 'Admin\CategoriesController@destroy');
+
+Route::any('categories/create', 'Admin\CategoriesController@store');
+
