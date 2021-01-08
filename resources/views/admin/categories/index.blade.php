@@ -381,8 +381,8 @@
                     }
 
                 });
-
-                $('#register_category').modal('toggle');
+                    $('.name').val("");
+                    $('#register_category').modal('toggle');
                     $dataTable.ajax.reload(null, false );
 
                 }else{
