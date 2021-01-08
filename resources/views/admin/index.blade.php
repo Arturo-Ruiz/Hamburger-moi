@@ -8,6 +8,8 @@
   <!-- Favicon -->
   <!-- <link rel="icon" href="assets/img/brand/favicon.png" type="image/png"> -->
   <!-- Fonts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" integrity="sha512-G3jAqT2eM4MMkLMyQR5YBhvN5/Da3IG6kqgYqU9zlIH4+2a+GuMdLb5Kpxy6ItMdCfgaKlo2XFhI0dHtMJjoRw==" crossorigin="anonymous"></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
 
   <link rel="stylesheet" href="{{ asset('admin/fonts/1.css') }}">
   <!-- Icons -->
@@ -16,7 +18,19 @@
   <!-- Page plugins -->
   <!-- CSS -->
   <link rel="stylesheet" href="{{ asset('admin/css/1.css') }}" type="text/css">
-  <script defer src="{{ mix('js/app.js') }}"></script>
+
+  <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('admin/vendor/bootstrap_js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('admin/vendor/js-cookie/js.cookie.js') }}"></script>
+  <script src="{{ asset('admin/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
+  <script src="{{ asset('admin/vendor/jquery-scroll-lock/jquery-scrollLock.min.js') }}"></script>
+  <!-- Optional JS -->
+  <script src="{{ asset('admin/vendor/chart.js/Chart.min.js') }}"></script>
+  <script src="{{ asset('admin/vendor/chart.js/Chart.extension.js') }}"></script>
+  <!-- Arturo JS -->
+  <script src="{{ asset('admin/js/1.js') }}"></script>
+  <script src="{{ asset('admin/vendor/datatables/jquery.dataTables.min.js') }}" ></script>
+  <script src="{{ asset('admin/vendor/datatables/dataTables.bootstrap4.min.js') }}" ></script>
   @laravelPWA
 </head>
 
@@ -42,7 +56,7 @@
                   </a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="{{route('categories.index')}}">
+                    <a class="nav-link" href="{{route('categories.index')}}" data-turbolinks-action="replace">
                       <i class="ni ni-bullet-list-67 "></i>
                       <span class="nav-link-text">Categorías</span>
                     </a>
@@ -71,10 +85,10 @@
               <!-- Navigation -->
               <hr class="my-3">
 
-              <ul class="navbar-nav mb-md-3">
+              <ul class="navbar-nav mb-md-3" data-turbolinks-permanent>
 
-                <li class="nav-item">
-                  <a class="nav-link active active-pro" target="_blank" href="https://colvengroup.com/">
+                <li class="nav-item" >
+                  <a class="nav-link active active-pro" target="_blank" href="#">
                     <i class="fa fa fa-headset"></i>
                     <span class="nav-link-text">Soporte Técnico</span>
                   </a>
@@ -124,7 +138,7 @@
                     <div class="dropdown-header noti-title">
                       <h6 class="text-overflow m-0">Bienvenido!</h6>
                     </div>
-                    <a href="https://colvengroup.com/" target="_blank" class="dropdown-item">
+                    <a href="#" target="_blank" class="dropdown-item">
                       <i class="fa fa-headset"></i>
                       <span>Soporte Técnico</span>
                     </a>
@@ -285,16 +299,6 @@
 
 
 
-    <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/bootstrap_js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/js-cookie/js.cookie.js') }}"></script>
-    <script src="{{ asset('admin/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/jquery-scroll-lock/jquery-scrollLock.min.js') }}"></script>
-    <!-- Optional JS -->
-    <script src="{{ asset('admin/vendor/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/chart.js/Chart.extension.js') }}"></script>
-    <!-- Arturo JS -->
-    <script src="{{ asset('admin/js/1.js') }}"></script>
     {{-- <script>
         var enero = JSON.parse("{{ json_encode($enero) }}")
         var febrero = JSON.parse("{{ json_encode($febrero) }}")
