@@ -358,7 +358,7 @@
         "columns": [
             {data: 'id'},
             {data: 'name'},
-            {data: 'status'},
+            {data: 'status.blade'},
             {data: 'btn'},
         ]
       });

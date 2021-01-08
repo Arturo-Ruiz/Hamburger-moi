@@ -1,5 +1,5 @@
+<input type="button" class="btn btn-info change-status" name="change-status"  id="{{$id}}" value="Cambiar Status">
 
-<input type="button" class="btn btn-secondary change-status" name="change-status"  id="{{$id}}" value="Cambiar Status">
 <script>
     $(".change-status").unbind().click(function() {
 

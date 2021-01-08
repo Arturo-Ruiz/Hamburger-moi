@@ -22,8 +22,9 @@ use App\Category;
 Route::get('categories', function () {
     return datatables()
     ->eloquent(Category::query())
+    ->addColumn('status.blade', 'admin.categories.status')
     ->addColumn('btn', 'admin.categories.actions')
-    ->rawColumns(['btn'])
+    ->rawColumns(['btn', 'status.blade'])
     ->toJson();
 });
 
