@@ -280,18 +280,6 @@
           </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
           <div class="modal fade" id="register_category" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -303,18 +291,17 @@
                 </div>
 
                 <div class="modal-body">
-                        @csrf
-                        <div class="form-group">
-                          <div class="input-group input-group-alternative mb-3">
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative mb-3">
                             <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                                <span class="input-group-text"><i class="fas fa-tag"></i></span>
                             </div>
                             <input class="form-control name" placeholder="Ingresar Nombre" id="name" name="name"  required type="text">
                           </div>
-                        </div>
-                        <div>
-                            <p class="info-validation" id="text_validation">Debes de completar el formulario para continuar*</p>
-                        </div>
+                    </div>
+                    <div>
+                        <p class="info-validation" id="text_validation">Debes de completar el formulario para continuar*</p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -324,6 +311,7 @@
               </div>
             </div>
           </div>
+
 
 
     <script>
@@ -353,15 +341,15 @@
               }
 
         },
-        "serverSide": true,
-        "ajax": "{{url('api/categories')}}",
-        "columns": [
-            {data: 'id'},
-            {data: 'name'},
-            {data: 'status.blade'},
-            {data: 'btn'},
-        ]
-      });
+            "serverSide": true,
+            "ajax": "{{url('api/categories')}}",
+            "columns": [
+                {data: 'id'},
+                {data: 'name'},
+                {data: 'status.blade'},
+                {data: 'btn'},
+            ]
+        });
 
 
 
@@ -375,35 +363,33 @@
 
         $(".save").unbind().click(function() {
 
-        var name = $(".name").val();
-        if(name){
-            $.ajax({
-                url: "{{url('api/categories/create')}}",
-                type: "POST",
-                data:{
-                name: name,
-                _token:'{{ csrf_token() }}'
-                },
-                cache: false,
-                dataType: 'json',
-                success: function(dataResult){
+            var name = $(".name").val();
 
+            if(name){
+                $.ajax({
+
+                    url: "{{url('api/categories/create')}}",
+                    type: "POST",
+                    data:{
+                    name: name,
+                    _token:'{{ csrf_token() }}'
+                    },
+                    cache: false,
+                    dataType: 'json',
+                    success: function(dataResult){
+
+                    }
+
+                });
+
+                $('#register_category').modal('toggle');
+                    $dataTable.ajax.reload(null, false );
+
+                }else{
+                    document.getElementById('text_validation').className = 'info-validation-show';
                 }
-            });
-
-        $('#register_category').modal('toggle');
-        $dataTable.ajax.reload(null, false );
-
-        }else{
-            document.getElementById('text_validation').className = 'info-validation-show';
-        }
-
-
-
         });
     </script>
-
-
 
 </body>
 </html>
