@@ -27,7 +27,8 @@ Route::get('categories', function () {
     ->toJson();
 });
 
-Route::any('categories/delete', 'Admin\CategoriesController@destroy');
 
 Route::any('categories/create', 'Admin\CategoriesController@store');
+Route::any('categories/change-status', 'Admin\CategoriesController@change');
+
 

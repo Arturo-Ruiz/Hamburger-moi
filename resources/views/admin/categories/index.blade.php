@@ -241,6 +241,7 @@
                               <tr>
                                 <th scope="col" class="sort" data-sort="name">ID</th>
                                 <th scope="col" class="sort" data-sort="budget">Nombre</th>
+                                <th scope="col" class="sort" data-sort="budget">Status</th>
                                 <th scope="col" class="sort" data-sort="status">Acciones</th>
                               </tr>
                             </thead>
@@ -357,6 +358,7 @@
         "columns": [
             {data: 'id'},
             {data: 'name'},
+            {data: 'status'},
             {data: 'btn'},
         ]
       });
