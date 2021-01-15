@@ -1,0 +1,73 @@
+PANEL DE CONTROL
+
+CATEGORÍAS :
+
+PRODUCTOS : 
+
+*(Burguer's, Vegeratariano Burguer's, Adicionais/extra, Porçoes, refrigerante, suco.)
+
+    PROMOÇAO DO DIA
+      
+ *( Ejemplo :" Hoje Refrigerante Gratis", "Hoje dia Da Batata", "Hoje sobremesa gratis", "primeiro Pedido entrega Gratis"
+entre otras.
+
+
+
+PEDIDOS
+
+Detalles de pedidos:
+
+ *Cliente: (nome completo)
+
+Telefone: DDD 8432-1659
+
+ *Direccion. (Rua, N°, Barrio, complemento
+
+ * Items: ( burguer's, bebida.)
+ 
+* Valor de entrega: R$ 5,00
+ 
+* Total a Pagar: 
+Items……. R$ 30,00
+Entrega….. R$  5,00
+Total………R$ 35,00
+ 
+* Forma de pagamento: 
+Dinhero ( colocar una opcion para saber si necesita troco )
+
+cartao Debito/Credito
+
+Transferencia Pix ( una opciona para dejar mi cpf, o chave para  tranferir em el momento. mi nombre completo e banco que seria picpay o mercado pago ) 
+
+Tiempo De Preparacion Y De Entrega 
+
+
+Estatus Do Pedido
+pedido creado 
+🔵 Pedido enviado
+🔴 Preparando Pedido
+🛵 Su pedido ha Fue entreguue
+
+     
+
+Relatorio De Pedidos:
+
+*Pedidos Entregados [N°]
+*Pedidis Cancelados [N°]
+*Pedidos En andamiento [N°]
+*Total de pedidos realizados [N°]
+
+
+
+
+Landing page:
+    info 2 secciones
+Promocion del dia
+Lista de productos
+datos de la empresa, horario
+
+Lista de productos:
+    ordernar por categoria
+    cada producto tiene un botón de adicionar
+
+Cada producto adicionado se ve reflejado en el carrito de compra

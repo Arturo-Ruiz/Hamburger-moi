@@ -20,7 +20,7 @@ class CategoriesController extends Controller
         $category = new Category;
 
         $category->name  =  $request->name;
-        $category->status  =  '0';
+        $category->status  =  '1';
 
         $category->save();
     }
